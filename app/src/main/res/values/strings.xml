@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Object Detection</string>
+
+    <string name="permission_camera_title">Camera Permission</string>
+    <string name="permission_camera_description">This permission is needed. Please grant the permission.</string>">
+    <string name="permission_camera_permanently_denied_description">Go to sittings and please grant the permission.</string>
+</resources>
