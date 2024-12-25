@@ -1,5 +1,3 @@
-import org.gradle.api.internal.lambdas.SerializableLambdas.action
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -47,9 +45,12 @@ android {
     }
     buildFeatures {
         compose = true
+        mlModelBinding = true
+    }
+    androidResources {
+        noCompress.add("tflite")
     }
 }
-
 
 dependencies {
 
@@ -78,11 +79,11 @@ dependencies {
     implementation(libs.androidx.camera.video)
     implementation(libs.androidx.camera.view)
     //LiteRT
-    implementation(libs.play.services.tflite.java)
-    implementation(libs.play.services.tflite.support)
-    implementation(libs.tensorflow.tensorflow.lite.task.vision)
-    implementation (libs.tensorflow.lite.gpu.delegate.plugin)
-    implementation (libs.tensorflow.lite.gpu)
+    implementation(libs.tensorflow.lite.task.vision.play.services)
+    implementation(libs.play.services.tflite.gpu)
+    implementation (libs.play.services.tflite.java)
+    implementation (libs.play.services.tflite.support)
+    implementation(libs.tensorflow.lite.metadata)
     //viewmodel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
